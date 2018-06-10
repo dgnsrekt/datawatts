@@ -19,7 +19,7 @@ wattsurl = best.url
 
 
 def playurl(url, volume=90):
-    instance = vlc.Instance('--input-repeat=-1 --novideo')
+    instance = vlc.Instance('--input-repeat=-1 --novideo --quiet')
 
     # Define VLC player
     player = instance.media_player_new()

@@ -13,7 +13,7 @@ URL = 'https://github.com/run2dev/datawatts'
 EMAIL = 'run2devtest@gmail.com'
 AUTHOR = 'Degennosaurus REKT'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.1.3'
+VERSION = '0.1.4'
 
 here = os.path.abspath(os.path.dirname(__file__))
 
