@@ -4,7 +4,8 @@ Datawatts
 **Datawatts** randomly streams a mix from https://www.musicforprogramming.net/ and a Alan Watts lecture.
 
 .. image:: datawatts.png
-   :align: center
+    :scale: 50 %
+    :align: center
 
 Installation
 ------------
