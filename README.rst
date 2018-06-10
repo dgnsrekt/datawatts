@@ -1,6 +1,6 @@
 Datawatts
 =========
 
-Randomly chooses a stream from https://www.musicforprogramming.net/ and alan watts from youtube.
+Randomly streams a mix from https://www.musicforprogramming.net/ and an Alan Watts lecture.
 
-![Demo](img/datawatts.png?raw=true)
+.. image:: datawatts.png
