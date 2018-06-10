@@ -11,7 +11,6 @@ import menu
 wattsurl = next(watts.get_url())[1]
 dataurl = next(datassette.get_url())
 dataname = dataurl[0].split(':')[1].strip()
-print(dataname)
 dataurl = dataurl[1]
 
 video = pafy.new(wattsurl)
