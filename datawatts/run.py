@@ -10,13 +10,15 @@ import watts
 wattsurl = next(watts.get_url())[1]
 dataurl = next(datassette.get_url())[1]
 
+print(wattsurl)
+print(dataurl)
+
 video = pafy.new(wattsurl)
 best = video.getbest()
 wattsurl = best.url
 
 
 def playurl(url, volume=90):
-    print(url)
     instance = vlc.Instance('--input-repeat=-1 --novideo')
 
     # Define VLC player
