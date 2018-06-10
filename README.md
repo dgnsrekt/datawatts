@@ -1,6 +1,3 @@
-FROM AMEN DOCS
+Randomly chooses a stream from https://www.musicforprogramming.net/ and alan watts from youtube.
 
-If you are on Linux, you'll need to do some apt-getting:
-
-libsoundfile: sudo apt-get install libsndfile1
-libavtools: sudo apt-get update && sudo apt-get install libav-tools
+![Demo](img/datawatts.png?raw=true)

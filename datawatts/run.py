@@ -2,16 +2,17 @@ import pafy
 import vlc
 import time
 import multiprocessing
-import threading
 
 import datassette
 import watts
+import menu
+
 
 wattsurl = next(watts.get_url())[1]
-dataurl = next(datassette.get_url())[1]
-
-print(wattsurl)
-print(dataurl)
+dataurl = next(datassette.get_url())
+dataname = dataurl[0].split(':')[1].strip()
+print(dataname)
+dataurl = dataurl[1]
 
 video = pafy.new(wattsurl)
 best = video.getbest()
@@ -32,19 +33,23 @@ def playurl(url, volume=90):
 
     player.audio_set_volume(volume)
     # Play the media
-    player.play()
-    while True:
-        time.sleep(1)
+    try:
+        player.play()
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        pass
 
 
 p1 = multiprocessing.Process(target=playurl, args=(dataurl, 45))
 p2 = multiprocessing.Process(target=playurl, args=(wattsurl, 70))
 
-# p1 = threading.Thread(target=playurl, args=(dataurl, 40))
-# p2 = threading.Thread(target=playurl, args=(wattsurl, 80))
-
-p1.start()
-p2.start()
-
-p1.join()
-p2.join()
+try:
+    p1.start()
+    p2.start()
+    menu.main_menu()
+except KeyboardInterrupt:
+    pass
+finally:
+    p1.join()
+    p2.join()
