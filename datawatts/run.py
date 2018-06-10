@@ -48,7 +48,7 @@ def main():
     try:
         p1.start()
         p2.start()
-        menu.main_menu()
+        menu.main_menu(dataname=dataname)
     except KeyboardInterrupt:
         pass
     finally:

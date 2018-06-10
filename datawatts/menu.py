@@ -3,7 +3,7 @@ import os
 import curses
 
 
-def draw_menu(stdscr):
+def draw_menu(stdscr, dataname=None):
     k = 0
     cursor_x = 0
     cursor_y = 0
@@ -53,7 +53,10 @@ def draw_menu(stdscr):
 
         # Declaration of strings
         title = "Datawatts"[:width-1]
-        subtitle = "Datassette x Alan Watts"[:width-1]
+        if dataname == None:
+            subtitle = "Datassette x Alan Watts"[:width-1]
+        else:
+            subtitle = f"{dataname} x Alan Watts"[:width-1]
         statusbarstr = "Press 'CTRL-C' to exit.| if zen != True, restart."
 
         # Centering calculations
@@ -90,8 +93,8 @@ def draw_menu(stdscr):
         k = stdscr.getch()
 
 
-def main_menu():
-    curses.wrapper(draw_menu)
+def main_menu(dataname=None):
+    curses.wrapper(draw_menu, dataname)
 
 
 if __name__ == "__main__":
