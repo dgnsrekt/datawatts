@@ -40,15 +40,21 @@ def playurl(url, volume=90):
         pass
 
 
-p1 = multiprocessing.Process(target=playurl, args=(dataurl, 45))
-p2 = multiprocessing.Process(target=playurl, args=(wattsurl, 70))
+def main():
 
-try:
-    p1.start()
-    p2.start()
-    menu.main_menu()
-except KeyboardInterrupt:
-    pass
-finally:
-    p1.join()
-    p2.join()
+    p1 = multiprocessing.Process(target=playurl, args=(dataurl, 45))
+    p2 = multiprocessing.Process(target=playurl, args=(wattsurl, 70))
+
+    try:
+        p1.start()
+        p2.start()
+        menu.main_menu()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        p1.join()
+        p2.join()
+
+
+if __name__ == '__main__':
+    main()
