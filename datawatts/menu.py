@@ -3,11 +3,10 @@ import os
 import curses
 
 
-def draw_menu(stdscr, x):
+def draw_menu(stdscr):
     k = 0
     cursor_x = 0
     cursor_y = 0
-    print(x)
 
     # Clear and refresh the screen for a blank canvas
     stdscr.clear()
