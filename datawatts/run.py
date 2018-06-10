@@ -3,9 +3,9 @@ import vlc
 import time
 import multiprocessing
 
-import datassette
-import watts
-import menu
+import .datassette
+import .watts
+import .menu
 
 
 wattsurl = next(watts.get_url())[1]
